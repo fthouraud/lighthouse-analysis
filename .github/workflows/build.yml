@@ -1,11 +1,11 @@
 name: Build Docker image
 on:
-  - push
-  - pull_request:
-      types: [assigned, opened, synchronize, reopened]
+  push:
+  pull_request:
+    types: [assigned, opened, synchronize, reopened]
 jobs:
   build-docker-image:
-    runs-on: docker:stable-dind
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
